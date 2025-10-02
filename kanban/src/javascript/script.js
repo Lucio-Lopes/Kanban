@@ -23,7 +23,7 @@ document.querySelectorAll('.kanban-column').forEach(column => {
 document.querySelectorAll('.add-card').forEach(column =>{
     column.addEventListener("click", e =>{
         let prioridade = window.prompt("Prioridade da tarefa");
-        let tarefa = window.prompt("Adicione uma tarefa");
+        let tarefa = window.prompt("Descrição da tarefa");
        if(prioridade ==null || tarefa == null || prioridade == "" || tarefa == ""){
         console.log(prioridade)
         console.log(tarefa)
@@ -47,7 +47,7 @@ document.querySelectorAll('.add-card').forEach(column =>{
                         </p>
                     </div>
                     <div class="user">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28rosto%29.jpg/960px-Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28rosto%29.jpg" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s" alt="">
                     </div>
                 </div>
             `
