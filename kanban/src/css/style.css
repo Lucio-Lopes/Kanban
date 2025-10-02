@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    font-family: "SUSE Mono", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.kanban{
+
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    overflow-x: auto;
+    align-items:start;
+    justify-content: space-around;
+    padding: 2em;
+}
+
+.kanban-column{
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #f6f6f6;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0px 10px 15px -3px rgb(41, 41, 41);
+    height: 90vh;
+    width: 20rem;
+}
+
+.kanban-title{
+    font-size: 18px;
+    color:#4b5563;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-card{
+    
+    color:#4b5563;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.kanban-card{
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding:10px;
+    cursor: pointer;
+}
+
+.bagde{
+
+    color: #fff;
+    background-color: rgb(15, 118, 214);
+    font-size: 12px;
+    padding: 4px 8px;;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.user img{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.card-info{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-icons{
+
+    display: flex;
+    gap: 18px;
+    color: #a8a8aa;
+}
+
+*::-webkit-scrollbar{
+
+    width: 8px;
+
+}
+
+*::-webkit-scrollbar-track{
+
+    background-color: #eaeffa;
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb{
+
+    background-color: #dde9fa;
+    border-radius: 20px;
+
+}
+
+.dragging{
+    opacity: 0.5;
+}
+
+.cards-hover{
+
+    background-color: #eaeffa;
+
+}
+
+.new-card{
+
+    z-index: 100;
+    background-color: #0000009f;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-card form{
+
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    background-color: white;
+    padding: 1.3rem;
+    border-radius: 0.5rem;
+    gap: 1rem;
+}
+
+.tarefa, .prioridade{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    font-size: 11pt;
+}
+
+.tarefa textarea{
+    max-width: 17.5rem;
+    min-width: 17.5rem;
+    max-height: 5em;
+    min-height: 5em;
+    border: 2px solid black;
+    outline: 0;
+}
+
+.prioridade select{
+
+    padding: 0.7rem 1rem;
+    background-color: white;
+}
+
+.prioridade, .tarefa label{
+
+    font-weight: bold;
+
+}
+
+.new-card form .create{
+
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    background-color: rgb(0, 169, 221);
+    color: white;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11pt;
+}
