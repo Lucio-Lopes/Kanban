@@ -24,50 +24,59 @@ document.querySelectorAll('.add-card').forEach(column =>{
     column.addEventListener("click", e =>{
         let prioridade = window.prompt("Prioridade da tarefa");
         let tarefa = window.prompt("Descrição da tarefa");
-       if(prioridade ==null || tarefa == null || prioridade == "" || tarefa == ""){
-        console.log(prioridade)
-        console.log(tarefa)
-       }else{
-         const card = document.createElement('div');
-        card.classList.add("kanban-card");
-        card.draggable=true;
-        card.innerHTML = `
-                <div class="bagde high">
-                    <span>
-                        ${prioridade}
-                    </span>
-                </div>
-                <p class="card-title">
-                    ${tarefa}
-                </p>
-                <div class="card-info">
-                    <div class="card-icons">
-                        <p>
-                            <i class="fa-solid fa-x"></i>
-                        </p>
+        if(prioridade !=null || tarefa != null || prioridade != "" || tarefa != ""){
+            const card = document.createElement('div');
+            card.classList.add("kanban-card");
+            card.draggable=true;
+            card.innerHTML = `
+                    <div class="bagde high">
+                        <span>
+                            ${prioridade}
+                        </span>
                     </div>
-                    <div class="user">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s" alt="">
+                    <p class="card-title">
+                        ${tarefa}
+                    </p>
+                    <div class="card-info">
+                        <div class="card-icons">
+                            <p>
+                                <i class="fa-solid fa-x"></i>
+                            </p>
+                        </div>
+                        <div class="user">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s" alt="">
+                        </div>
                     </div>
-                </div>
-            `
-            card.addEventListener('dragstart', e =>{
+                `
+                card.addEventListener('dragstart', e =>{
 
-                e.currentTarget.classList.add('dragging');
+                    e.currentTarget.classList.add('dragging');
 
-            })
-            card.addEventListener('dragend', e =>{
+                })
+                card.addEventListener('dragend', e =>{
 
-                e.currentTarget.classList.remove('dragging');
+                    e.currentTarget.classList.remove('dragging');
 
-            })
-            let target = e.currentTarget.closest(".kanban-column");
-            target.appendChild(card);
-            document.querySelector(".fa-x").addEventListener("click", e=>{
-                e.currentTarget.closest(".kanban-card").remove();
+                })
+                let target = e.currentTarget.closest(".kanban-column");
+                target.appendChild(card);
+                remover();
+        }else{
+            
+            }
+    })
+    console.log("terminou")
+})
 
-            })
-       }
+function remover(){
+
+    document.querySelectorAll(".fa-x").forEach(x =>{
+    x.addEventListener("click", e=>{
+        e.currentTarget.closest(".kanban-card").remove();
+        console.log("removeu");
     })
 })
+
+}
+
 
